@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Vad.Phoenix.Server/1.0.0": {
+        "dependencies": {
+          "Vad.Phoenix.Logic": "1.0.0",
+          "Vad.Phoenix.Titan": "1.0.0"
+        },
+        "runtime": {
+          "Vad.Phoenix.Server.dll": {}
+        }
+      },
+      "Vad.Phoenix.Logic/1.0.0": {
+        "dependencies": {
+          "Vad.Phoenix.Titan": "1.0.0"
+        },
+        "runtime": {
+          "Vad.Phoenix.Logic.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Vad.Phoenix.Titan/1.0.0": {
+        "runtime": {
+          "Vad.Phoenix.Titan.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Vad.Phoenix.Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Vad.Phoenix.Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Vad.Phoenix.Titan/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
