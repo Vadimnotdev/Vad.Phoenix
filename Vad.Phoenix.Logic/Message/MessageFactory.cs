@@ -4,6 +4,7 @@
     using Vad.Phoenix.Logic.Message.Auth;
     using Vad.Phoenix.Titan.Logic.Message;
     using Vad.Phoenix.Logic.Message.Battle;
+    using Vad.Phoenix.Logic.Message.Home;
 
     public class LogicGameMessageFactory : LogicMessageFactory
     {
@@ -21,7 +22,9 @@
             _allMessages = new Dictionary<int, Type> {
                 { 10101, typeof(LoginMessage) },
                 { 10108, typeof(KeepAliveMessage) },
-                { 10001, typeof(RequestStartLevelMessage) }
+                { 10001, typeof(RequestStartLevelMessage) },
+                { 14102, typeof(EndClientTurnMessage) },
+                { 14400, typeof(RequestScoreUpdateMessage) }
             };
         }
 

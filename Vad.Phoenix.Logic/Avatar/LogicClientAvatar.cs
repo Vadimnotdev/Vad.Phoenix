@@ -56,10 +56,10 @@ namespace Vad.Phoenix.Logic.Avatar
             encoder.WriteInt(this._achievementsClaimed);
             encoder.WriteInt(this._achievementProgress);
             encoder.WriteInt(this._levelScore);
-            for (int i = 1; i <= 79; i++)
+            for (int i = 1; i <= this._levelScore; i++)
             {
                 encoder.WriteInt(14000000 + i);
-                encoder.WriteInt(30000);
+                encoder.WriteInt(0);
                 encoder.WriteInt(0);
             }
             encoder.WriteInt(this._levelAreaScore);
