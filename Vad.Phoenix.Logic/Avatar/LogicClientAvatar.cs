@@ -50,7 +50,7 @@ namespace Vad.Phoenix.Logic.Avatar
             encoder.WriteInt(0);
             encoder.WriteInt(this._achievementsClaimed);
             encoder.WriteInt(this._achievementProgress);
-            if (_levelScore == 1 && _energy == 10)
+            if (_levelScore == 1 && _diamonds == 100)
             {
                 encoder.WriteInt(_levelScore);
                 encoder.WriteInt(14000001);
