@@ -27,4 +27,4 @@ and run Server in app folder
 ## What is work?
 - login
 - battle
-- database(but you get 5000 score for each completed level)
+- database(but you get 50000 score for each completed level)
