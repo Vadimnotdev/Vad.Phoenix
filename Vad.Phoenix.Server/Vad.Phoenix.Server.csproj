@@ -12,4 +12,9 @@
     <ProjectReference Include="..\Vad.Phoenix.Titan\Vad.Phoenix.Titan.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="DependencyInjection" Version="1.2.0" />
+    <PackageReference Include="MongoDB.Driver" Version="3.5.2" />
+  </ItemGroup>
+
 </Project>

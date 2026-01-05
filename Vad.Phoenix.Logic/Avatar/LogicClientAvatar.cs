@@ -5,63 +5,74 @@ namespace Vad.Phoenix.Logic.Avatar
 {
     public class LogicClientAvatar
     {
-        private LogicLong _id;
+        public LogicLong _id;
         private string _name;
         private string _facebookId;
-        private int _lastPlayedLevel;
-        private int _diamonds;
+        public int _lastPlayedLevel;
+        public int _diamonds;
         private int _freeDiamonds;
         private bool _nameSetByUser;
         private int _cumulativePurchasedDiamonds;
         private int _resourceCount;
-        private int _energy;
+        public int _energy;
 
         private int _achievementsClaimed;
         private int _achievementProgress;
-        private int _levelScore;
+        public int _levelScore;
         private int _levelAreaScore;
 
         public LogicClientAvatar()
         {
-            this._id = new LogicLong(0, 1);
             this._name = null;
             this._facebookId = null;
-            this._lastPlayedLevel = 0;
-            this._diamonds = 50;
-            this._freeDiamonds = 50;
+            this._freeDiamonds = 0;
             this._nameSetByUser = false;
             this._cumulativePurchasedDiamonds = 0;
             this._resourceCount = 1;
-            this._energy = 10;
             this._achievementsClaimed = 0;
             this._achievementProgress = 0;
-            this._levelScore = 79;
             this._levelAreaScore = 0;
         }
 
         public void Encode(ChecksumEncoder encoder)
         {
-            encoder.WriteLong(this._id);
+            encoder.WriteLong(_id);
             encoder.WriteString(this._name);
             encoder.WriteString(this._facebookId);
-            encoder.WriteInt(this._lastPlayedLevel);
-            encoder.WriteInt(this._diamonds);
+            encoder.WriteInt(_lastPlayedLevel);
+            encoder.WriteInt(_diamonds);
             encoder.WriteInt(this._freeDiamonds);
             encoder.WriteBoolean(this._nameSetByUser);
             encoder.WriteInt(this._cumulativePurchasedDiamonds);
             encoder.WriteInt(this._resourceCount);
             encoder.WriteInt(9000001);
-            encoder.WriteInt(this._energy);
-            encoder.WriteInt(this._energy);
+            encoder.WriteInt(_energy);
+            encoder.WriteInt(0);
             encoder.WriteInt(this._achievementsClaimed);
             encoder.WriteInt(this._achievementProgress);
-            encoder.WriteInt(this._levelScore);
-            for (int i = 1; i <= this._levelScore; i++)
+            if (_levelScore == 1 && _energy == 10)
             {
-                encoder.WriteInt(14000000 + i);
+                encoder.WriteInt(_levelScore);
+                encoder.WriteInt(14000001);
                 encoder.WriteInt(0);
                 encoder.WriteInt(0);
             }
+            else
+            {
+                encoder.WriteInt(_levelScore +1);
+                for (int i = 1; i <= _levelScore +1; i++)
+                {
+                    encoder.WriteInt(14000000 + i);
+                    if (i == _levelScore +1)
+                        encoder.WriteInt(0);
+                    else
+                        encoder.WriteInt(50000);
+
+                    encoder.WriteInt(0);
+                }
+
+            }
+
             encoder.WriteInt(this._levelAreaScore);
 
         }

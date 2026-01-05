@@ -6,18 +6,17 @@ namespace Vad.Phoenix.Logic.Home
 {
     public class LogicClientHome
     {
-        private LogicLong _homeId;
+        public LogicLong _homeId;
         private string _homeJSON;
 
         public LogicClientHome()
         {
-            this._homeId = new LogicLong(0, 1);
             this._homeJSON = """{\"objects\":[]}""";
         }
 
         public void Encode(ChecksumEncoder encoder)
         {
-            encoder.WriteLong(this._homeId);
+            encoder.WriteLong(_homeId);
             encoder.WriteString(this._homeJSON);
         }
 
